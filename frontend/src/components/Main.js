@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../App.css';
 
 class Main extends Component {
   constructor(props) {
@@ -39,12 +40,12 @@ class Main extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleUploadImage}>
-        <div>
-          <input ref={(ref) => { this.uploadInput = ref; }} type="file" />
+      <form class="col align-self-center" onSubmit={this.handleUploadImage}>
+        <div class="col align-self-center margin-bot">
+          <input class="choose-file-button" ref={(ref) => { this.uploadInput = ref; }} type="file" />
         </div>
         <div>
-          <input ref={(ref) => { this.fileName = ref; }} type="text" placeholder="Enter the desired name of file" />
+          <input class="file-input" ref={(ref) => { this.fileName = ref; }} type="text" placeholder="Enter the desired name of file" />
         </div>
         <br />
         <div>

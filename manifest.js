@@ -1,11 +1,11 @@
 //generate a manifest file given a file
 
-function getFileName(file) {
-  return file.name;
+function getFileName(File file) {
+  return File.getName;
 }
 
-function getFileType(file) {
-  var filename = getFileName(file);
+function getFileType(File file) {
+  var filename = File.getName();
   return filename.substring(filename.lastIndexOf('.')+1, filename.length) || filename;
 }
 
@@ -17,7 +17,7 @@ function getFileId() {
   return uuidv1();
 }
 
-function createManifest(file) {
+function createManifestObj(File file) {
   const manifest = {
     id: getFileId,
     fileName: getFileName,
@@ -33,5 +33,10 @@ function setHash(manifest, hash) {
   return manifest;
 }
 
-module.exports.generateManifest = createManifest;
+function createManifestFile() {
+
+}
+
+module.exports.generateManifest = createManifestObj;
 module.exports.setHash = setHash;
+module.exports.generateManifestFile = createManifestFile;
